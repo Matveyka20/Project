@@ -1,6 +1,6 @@
 ## Create schema `humanFriendsdb`;
 ## drop schema `humanFriendsdb`;
-use `humanFriendsdb`;
+use `humanFriends`;
 
 ## Создаем низкоуровневые таблицы
 create table cat (
