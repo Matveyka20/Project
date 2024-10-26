@@ -1,215 +1,168 @@
-## Create schema `humanFriendsdb`;
-## drop schema `humanFriendsdb`;
-use `humanFriends`;
+CREATE DATABASE Human_friends;
 
-## Создаем низкоуровневые таблицы
-create table cat (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday DATE
+USE Human_friends;
+CREATE TABLE animal_classes
+(
+	Id INT AUTO_INCREMENT PRIMARY KEY, 
+	Class_name VARCHAR(20)
 );
 
+INSERT INTO animal_classes (Class_name)
+VALUES ('Pack animals'),
+('Home animals');  
 
-create table dog (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday DATE
+
+CREATE TABLE packed_animals
+(
+	  Id INT AUTO_INCREMENT PRIMARY KEY,
+    Genus_name VARCHAR (20),
+    Class_id INT,
+    FOREIGN KEY (Class_id) REFERENCES animal_classes (Id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-
-create table hamster (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday DATE
-);
-
-
-
-create table horse (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	liftWeight INT,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-	Birthday DATE
-);
-
-
-create table camel (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	liftWeight INT,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-	Birthday DATE
-);
-
-
-create table donkey (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	liftWeight INT,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-	Birthday DATE
-);
-
-## Создаем таблицы уровня выше
-create table pet (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday DATE
-);
-
-
-create table packAnimal (
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    liftWeight INT,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday DATE
-);
-
-## Создаем общую таблицу
-create table humanFriend(
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(45),
-    Command VARCHAR(45),
-    Birthday Date
-    );
+INSERT INTO packed_animals (Genus_name, Class_id)
+VALUES ('Horses', 1),
+('Donkeys', 1),  
+('Camels', 1); 
     
-## Заполняем данными низкоуровневые таблицы
-    
-    insert into cat (Name, Command, Birthday) values
-    ('Барсик', 'Спать', '2022-01-01'),
-    ('Мурзик', 'Спать', '2017-06-06'),
-	('Месси', 'Спать', '2023-01-06'),
-    ('Мурка', 'Спать', '2021-03-17');
-    
-    select * from cat;
+CREATE TABLE home_animals
+(
+	  Id INT AUTO_INCREMENT PRIMARY KEY,
+    Genus_name VARCHAR (20),
+    Class_id INT,
+    FOREIGN KEY (Class_id) REFERENCES animal_classes (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
 
-    insert into dog (Name, Command, Birthday) values
-    ('Полкан', 'Лежать', '2022-01-01'),
-    ('Хатико', 'Лежать', '2017-06-06'),
-	('Юта', 'Лежать', '2023-01-06'),
-    ('Микки', 'Лежать', '2021-03-17');
-	
-    select * from dog;
+INSERT INTO home_animals (Genus_name, Class_id)
+VALUES ('Cats', 2),
+('Dogs', 2),  
+('Hamsters', 2); 
+
+CREATE TABLE cats 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO cats (Name, Birthday, Commands, Genus_id)
+VALUES ('Ivan', '2021-05-06', 'stand up', 1),
+('Masha', '2016-11-09', "sit down", 1),  
+('Andrey', '2019-12-12', "to lie", 1); 
+
+CREATE TABLE dogs 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO dogs (Name, Birthday, Commands, Genus_id)
+VALUES ('Max', '2022-01-09', 'come to me, to lie, voice', 2),
+('Pavel', '2016-06-12', "sit down, to lie, voice", 2),  
+('Ahmed', '2024-04-09', "sit down, to lie, voice, fas", 2), 
+
+CREATE TABLE hamsters 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO hamsters (Name, Birthday, Commands, Genus_id)
+VALUES ('Kesha', '2022-11-04', 'voice', 3),
+('Dima', '2020-01-12', "sit down", 3),  
+('Oleg', '2018-07-11', NULL, 3), 
+
+CREATE TABLE horses 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO horses (Name, Birthday, Commands, Genus_id)
+VALUES ('Nikita', '2022-02-09', 'run, step ', 1),
+('Natasha', '2023-08-10', "run, step , jump in", 1),  
+('Sava', '2011-01-11', "run, step , jump in", 1), 
+
+CREATE TABLE donkeys 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO donkeys (Name, Birthday, Commands, Genus_id)
+VALUES ('Polina', '2018-08-11', NULL, 2),
+('Sacha', '2018-05-10', "to eat", 2),  
+('Aleksey', '2020-02-12', "to eat", 2), 
+
+CREATE TABLE camels 
+(       
+    Id INT AUTO_INCREMENT PRIMARY KEY, 
+    Name VARCHAR(20), 
+    Birthday DATE,
+    Commands VARCHAR(50),
+    Genus_id int,
+    Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+INSERT INTO camels (Name, Birthday, Commands, Genus_id)
+VALUES ('Artem', '2023-03-11', 'run', 3),
+('Denis', '2018-02-10', "come back", 3),  
+('Oksana', '2014-06-07', "run", 3), 
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM camels;
+
+SELECT Name, Birthday, Commands FROM horses
+UNION SELECT  Name, Birthday, Commands FROM donkeys;
+
+CREATE TEMPORARY TABLE animals AS 
+SELECT *, 'Horses' as genus FROM horses
+UNION SELECT *, 'Donkeys' AS genus FROM donkeys
+UNION SELECT *, 'Dogs' AS genus FROM dogs
+UNION SELECT *, 'Cats' AS genus FROM cats
+UNION SELECT *, 'Hamsters' AS genus FROM hamsters;
+
+CREATE TABLE yang_animal AS
+SELECT Name, Birthday, Commands, genus, TIMESTAMPDIFF(MONTH, Birthday, CURDATE()) AS Age_in_month
+FROM animals WHERE Birthday BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADDDATE(CURDATE(), INTERVAL -1 YEAR);
  
-	insert into hamster (Name, Command, Birthday) values
-    ('Хома', 'Бежать', '2022-01-01'),
-    ('Пушок', 'Бежать', '2017-06-06'),
-	('Хомура', 'Бежать', '2023-01-06'),
-    ('Генерал', 'Бежать', '2021-03-17');
-	
-    select * from hamster;
-     
-	insert into camel (camelName, camelCommand, camelLiftWeight, camelBirthday) values
-    ('Агата', 'Поднять', 100, '2022-01-01'),
-    ('Ида', 'Поднять', 200, '2017-06-06'),
-	('Ланцелот', 'Поднять', 400, '2023-01-06'),
-    ('Джаред', 'Поднять', 50, '2021-03-17');
-	
-    select * from camel;
-     
-	insert into horse (Name, Command, liftWeight, Birthday) values
-    ('Мерин', 'Галоп', 150, '2022-01-01'),
-    ('Буран', 'Галоп', 50, '2017-06-06'),
-	('Плотва', 'Галоп', 200, '2023-01-06'),
-    ('Осман', 'Галоп', 250, '2021-03-17');
-	
-    select * from horse;    
-     
-	insert into donkey (Name, Command, liftWeight, Birthday) values
-    ('Алдар', 'Жевать', 35, '2022-01-01'),
-    ('Бригелла', 'Жевать', 10, '2017-06-06'),
-	('Зигфрид', 'Жевать', 20, '2023-01-06'),
-    ('Моисей', 'Жевать', 100, '2021-03-17');
-	
-    select * from donkey;  	
- 
- ## Удаление таблицы верблюдов
- delete from camel where id > 0;
- select * from camel;
- 
-## Объединение таблицы лошадей и ослов в одну таблицу.
-create table packAnimalNew (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
-select  Name, 
-        Command, 
-        Birthday
-from horse union 
-select  Name, 
-        Command, 
-        Birthday
-from donkey;
+SELECT * FROM yang_animal;
 
-select * from packAnimalNew;
-
-## Создание таблицы, в которой все животные в возрасте от 1 до 3 лет.
-INSERT into pet (Name, Command, Birthday)
-select  Name, 
-        Command, 
-        Birthday
-from cat union 
-select  Name, 
-        Command, 
-        Birthday
-from dog union
-select  Name, 
-        Command, 
-        Birthday
-from hamster;
-select * from pet;
-
-INSERT into humanFriend (Name, Command, Birthday)
-select  Name, 
-        Command, 
-        Birthday
-from pet union 
-select  Name, 
-        Command, 
-        Birthday
-from packAnimalNew;
-select * from humanFriend;
-
-create table youngAnimals (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
-select Name, 
-        Command, 
-        Birthday,
-        Round((year(current_date()) - year(Birthday)) + (month(current_date() - month(Birthday)))/10, 2) as age
-from humanFriend
-where Round((year(current_date()) - year(Birthday)) + (month(current_date() - month(Birthday)))/10, 2) > 1 
-	and Round((year(current_date()) - year(Birthday)) + (month(current_date() - month(Birthday)))/10, 2) < 3;
-select * from youngAnimals;
-
-## Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую принадлежность к старым таблицам.
-
-create table newhumanFriend (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
-select  Name, 
-        Command,
-        Birthday,
-        'cat' as oldTable
-from cat union 
-select  Name, 
-        Command, 
-        Birthday,
-        'dog' as oldTable
-from dog union
-select  Name, 
-        Command, 
-        Birthday,
-        'hamster' as oldTable
-from hamster union 
-select  Name, 
-        Command, 
-        Birthday,
-        'horse' as oldTable
-from horse union 
-select  Name, 
-        Command, 
-        Birthday,
-        'donkey' as oldTable
-from donkey;
-
-select * from newhumanFriend;
+SELECT h.Name, h.Birthday, h.Commands, pa.Genus_name, ya.Age_in_month 
+FROM horses h
+LEFT JOIN yang_animal ya ON ya.Name = h.Name
+LEFT JOIN packed_animals pa ON pa.Id = h.Genus_id
+UNION 
+SELECT d.Name, d.Birthday, d.Commands, pa.Genus_name, ya.Age_in_month 
+FROM donkeys d 
+LEFT JOIN yang_animal ya ON ya.Name = d.Name
+LEFT JOIN packed_animals pa ON pa.Id = d.Genus_id
+UNION
+SELECT c.Name, c.Birthday, c.Commands, ha.Genus_name, ya.Age_in_month 
+FROM cats c
+LEFT JOIN yang_animal ya ON ya.Name = c.Name
+LEFT JOIN home_animals ha ON ha.Id = c.Genus_id
+UNION
+SELECT d.Name, d.Birthday, d.Commands, ha.Genus_name, ya.Age_in_month 
+FROM dogs d
+LEFT JOIN yang_animal ya ON ya.Name = d.Name
+LEFT JOIN home_animals ha ON ha.Id = d.Genus_id
+UNION
+SELECT hm.Name, hm.Birthday, hm.Commands, ha.Genus_name, ya.Age_in_month 
+FROM hamsters hm
+LEFT JOIN yang_animal ya ON ya.Name = hm.Name
+LEFT JOIN home_animals ha ON ha.Id = hm.Genus_id;

@@ -1,17 +1,17 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0" version="24.8.3">
   <diagram name="Страница — 1" id="yV7kHZUCTd8i9eUtE25x">
-    <mxGraphModel dx="1188" dy="653" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="679" dy="373" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="QGzH9clachBuXUPUivIa-1" value="Class Animals" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
-          <mxGeometry y="250" width="140" height="52" as="geometry" />
+          <mxGeometry x="344" y="120" width="140" height="52" as="geometry" />
         </mxCell>
         <mxCell id="QGzH9clachBuXUPUivIa-4" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-1">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="QGzH9clachBuXUPUivIa-5" value="Home animals" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="146" width="140" height="104" as="geometry" />
+          <mxGeometry x="204" y="240" width="140" height="104" as="geometry" />
         </mxCell>
         <mxCell id="QGzH9clachBuXUPUivIa-6" value="Dogs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-5">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
@@ -23,25 +23,25 @@
           <mxGeometry y="78" width="140" height="26" as="geometry" />
         </mxCell>
         <mxCell id="QGzH9clachBuXUPUivIa-9" value="Pack animals" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
-          <mxGeometry x="240" y="302" width="140" height="104" as="geometry" />
+          <mxGeometry x="484" y="240" width="140" height="104" as="geometry" />
         </mxCell>
         <mxCell id="QGzH9clachBuXUPUivIa-10" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;Horses&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-9">
           <mxGeometry y="26" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="QGzH9clachBuXUPUivIa-11" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;Camels&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-9">
+        <mxCell id="QGzH9clachBuXUPUivIa-11" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;Donkeys&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-9">
           <mxGeometry y="52" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="QGzH9clachBuXUPUivIa-12" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;Donkeys&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-9">
+        <mxCell id="QGzH9clachBuXUPUivIa-12" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;Camels&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="QGzH9clachBuXUPUivIa-9">
           <mxGeometry y="78" width="140" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="QGzH9clachBuXUPUivIa-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.02;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="QGzH9clachBuXUPUivIa-1" target="QGzH9clachBuXUPUivIa-8">
+        <mxCell id="QGzH9clachBuXUPUivIa-13" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="QGzH9clachBuXUPUivIa-4" target="QGzH9clachBuXUPUivIa-5">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="390" y="410" as="sourcePoint" />
             <mxPoint x="239" y="165" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="QGzH9clachBuXUPUivIa-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.985;exitY=0.968;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QGzH9clachBuXUPUivIa-4" target="QGzH9clachBuXUPUivIa-9">
+        <mxCell id="QGzH9clachBuXUPUivIa-14" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="QGzH9clachBuXUPUivIa-4" target="QGzH9clachBuXUPUivIa-9">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="640" y="300" as="sourcePoint" />
             <mxPoint x="440" y="360" as="targetPoint" />
